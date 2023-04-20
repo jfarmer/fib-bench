@@ -1,6 +1,6 @@
 # fib-bench
 
-Benchmark of a few Ruby implementations of Fibonacci
+Benchmark of a few Ruby and Python implementations of Fibonacci
 
 The most interesting one is `fib_phi` which implements the exact arithmetic of ℚ(φ). This allows us to use Binet's formula without loss of accuracy.
 
@@ -9,8 +9,10 @@ The most interesting one is `fib_phi` which implements the exact arithmetic of �
 Clone this repository and run:
 
 ```console
-ruby fib_bench.rb
+ruby ruby/fib_bench.rb
 ```
+
+There are also Python implementations in the `python/` directory, but no benchmarks yet.
 
 ## Binet's Formula
 
