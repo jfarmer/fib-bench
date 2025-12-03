@@ -64,17 +64,16 @@ class PhiRational
     base   = PhiRational(a, b)
     result = PhiRational(1, 0)
 
-    while n.nonzero?
+    while n > 1
       if n.odd?
         result *= base
-        n -= 1
       end
 
       base *= base
       n /= 2
     end
 
-    result
+    result * base
   end
 
   def to_s
