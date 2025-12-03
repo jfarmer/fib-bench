@@ -18,7 +18,8 @@ class PhiRational:
         return Fraction(self.a**2 + self.a*self.b - self.b**2)
 
     def reciprocal(self):
-        return PhiRational((self.a + self.b) / self.norm(), -self.b / self.norm())
+        n = self.norm()
+        return PhiRational((self.a + self.b) / n, -self.b / n)
 
     def __int__(self):
         if self.b == 0:
@@ -59,18 +60,21 @@ class PhiRational:
         return self.a == other.a and self.b == other.b
 
     def __pow__(self, n):
-        base   = PhiRational(self.a, self.b)
-        result = PhiRational(1, 0)
+        if n < 0:
+            raise ValueError("Negative exponents not supported")
+        if n == 0:
+            return PhiRational(1, 0)
 
-        while n != 0:
+        result = PhiRational(1, 0)
+        base = PhiRational(self.a, self.b)
+
+        while n > 1:
             if n % 2 == 1:
                 result *= base
-                n -= 1
-
             base *= base
             n //= 2
 
-        return result
+        return result * base
 
     def __repr__(self):
         return f'({self.a} + {self.b}φ)'
