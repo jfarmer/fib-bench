@@ -12,7 +12,12 @@ Clone this repository and run:
 ruby ruby/fib_bench.rb
 ```
 
-There are also Python implementations in the `python/` directory, but no benchmarks yet.
+There are also Python implementations in the `python/` directory, but it requires `numpy` for the matrix implementation. You will want to:
+
+```console
+cd python/
+uv run python fib_bench.py
+```
 
 ## Binet's Formula
 
