@@ -11,7 +11,7 @@ class PhiRational:
             self.a = Fraction(a)
             self.b = Fraction(b)
 
-    def inverse(self):
+    def __neg__(self):
         return PhiRational(-self.a, -self.b)
 
     def norm(self):
@@ -35,7 +35,10 @@ class PhiRational:
         return self + other
 
     def __sub__(self, other):
-        return self + other.inverse()
+        return self + (-PhiRational(other))
+
+    def __rsub__(self, other):
+        return PhiRational(other) + (-self)
 
     def __mul__(self, other):
         other = PhiRational(other)
