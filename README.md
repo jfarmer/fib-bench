@@ -4,6 +4,12 @@ Benchmark of a few Ruby and Python implementations of Fibonacci
 
 The most interesting one is `fib_phi` which implements the exact arithmetic of ℚ(φ). This allows us to use Binet's formula without loss of accuracy.
 
+## Contents <!-- omit in toc -->
+
+- [Usage](#usage)
+- [Binet's Formula](#binets-formula)
+- [Isn't This Overkill?](#isnt-this-overkill)
+
 ## Usage
 
 Clone this repository and run:
