@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def fib_matrix(n):
     if n <= 0:
         return 0
